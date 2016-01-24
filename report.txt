@@ -1,0 +1,36 @@
+Assignment 3 Report
+
+Name: Rashmi Vijaya Prasad
+
+1. What I turned in, what it does, and how to run it
+
+I have included hw3_corpus_tool.py in my program create_baseline_features.py and
+create_advanced_features.py.
+
+Command to run the 2 programs to create the training files are as below:
+$ for file in /home/rashmi/HW3/csci544_hw3_data/data/train/*.csv; do python3 create_baseline_features.py $file >> base.training;done
+
+$ for file in /home/rashmi/HW3/csci544_hw3_data/data/train/*.csv; do python3 create_advanced_features.py $file >> advanced.training;done
+
+We can use the same programs to generate the test files too.
+
+2. How I evaluated my baseline and advanced features
+
+I used k-fold cross validation method to evaluate my baseline and advanced festures. I selected k = 3 and obtained an accuracy of 72.75% for baseline and 73.78% for advanced feature set.
+
+3. Description of advanced feature set
+
+I have included tri-grams in my advanced feature set. All the baseline features have also been included.
+
+4. How I developed my advanced feature set
+
+Along with first utterance and speaker changed, initially I used only bi-gram tokens. This gave me only a slight increase in my accuracy about 0.2%. Then I replaced bi-grams with tri-grams and this also gave me only about 0.1% increase. Then along with all my baseline features, I used tri-grams which gave me about 1% increase in my accuracy.
+
+5. Results
+
+Accuracy of baseline features: 72.75% 	[ Fold 1 = 72.81%; Fold 2 = 72.76%; Fold 3 = 72.70% ]
+Accuracy of advanced features: 73.78%	[ Fold 1 = 73.72%; Fold 2 = 73.81%; FOld 3 = 73.83% ]
+
+6. Additional information about the assignment
+
+Not applicable 
